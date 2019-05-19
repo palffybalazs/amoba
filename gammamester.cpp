@@ -48,27 +48,48 @@ bool gammamester::free_to_click(int v, int f, bool kor)
 }
 bool gammamester::gameover()
 {
-    win = true;
-    for (int i = 0;i<adat.size(); i++)
+    string nyertesszin;
+    for (int i = 0; i<adat.size(); i++)
     {
+        int stepv = 1;
+        int stepf = 0;
 
-            stepv = 1;
-            stepv = 0;
+        int hanyvanegysorban = 0;
+        for (int tav = 0; tav<this->hanykellnyerni; tav++)
+        {
+            bool vanodarakva = false;
             for (int h = 0; h<adat.size(); h++)
             {
-                if(!(adat[h].v == adat[i+hossz*stepv].v &&
-                   adat[h].f == adat[i+hossz*stepf].f &&
-                   adat[h].f == adat[i+hossz*stepf].f))
+                if((adat[h].v == adat[i].v + tav*stepv &&
+                    adat[h].f == adat[i].f + tav*stepf &&
+                    adat[h].kor == adat[i].kor))
+                {
+                    vanodarakva = true;
+                }
+            }
+            if (vanodarakva)
+                {
+                   hanyvanegysorban++;
+                }
+        };
+        if(hanyvanegysorban == this->hanykellnyerni)
+            {
+                this->win = true;
+                if(adat[i].kor)
+                {
+                    nyertesszin = "haromszog";
+                }
+                else
+                {
+                    nyertesszin = "x";
+                }
             }
     }
 
-    if(win)
+    if(this->win)
     {
-        cout<<"gyozelem"<<endl;
+        cout<<"nyert a(z) "<<nyertesszin<<endl;
     }
-    else
-    {
-        cout<<"mehet tovabb"<<endl;
-    }
-    return win;
+
+    return this->win;
 }
