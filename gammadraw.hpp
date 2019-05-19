@@ -14,6 +14,8 @@ class gammadraw : public Widget
         bool handle(genv::event ev, bool focused);
         void negyzetracsrajzolo();
         void lepesrajzolo();
+        void xrajzolo(koord actjelzes);
+        void haromszograjzolo(koord actjelzes);
         std::string returnchosen();
         std::vector<koord>adat;
         bool kor = true;
