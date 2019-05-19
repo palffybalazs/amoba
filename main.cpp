@@ -69,7 +69,7 @@ int main()
             gout<<move_to(240,100)<<box(120,20);
             gout<<color(0,0,0);
             gout<<move_to(280,113)<<text("Mehet");
-            if(ev.pos_x>240 && ev.pos_x<360 && ev.pos_y>100 && ev.pos_y<120 && ev.button == btn_left)
+            if(ev.pos_x>240 && ev.pos_x<360 && ev.pos_y>100 && ev.pos_y<120 && ev.buttot)
             {
                 logika = new gammamester(); //game logic started
                 mehet = true;

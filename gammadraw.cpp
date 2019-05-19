@@ -34,15 +34,32 @@ gammadraw::gammadraw(string szin, string szam, gammamester* logika)
     this->y=1;
     this->logika = logika;
     meret = stoi(szam);
+    this->vege = false;
 }
 void gammadraw::draw()
 {
+
     this->negyzetracsrajzolo();
     this->lepesrajzolo();
+    cout<<"nincs vege";
+if(vege)
+    {
+        cout<<"vege";
+        gout<<color(0,0,0);
+        gout<<move_to(0,0)<<box(900,900);
+        gout<<color(255,255,255);
+        gout<<move_to(1,20)<<text("Jateknak vege, gyoztes a(z):");
+        gout<<move_to(1,40)<<text(this->logika->nyertesszin);
+
+    }
+
+
 }
 
 void gammadraw::negyzetracsrajzolo()
 {
+    vege =  this->logika->win;
+
     for(int j=0; j<meret; j++)
     {
         for(int i=0; i<meret; i++)
@@ -52,6 +69,7 @@ void gammadraw::negyzetracsrajzolo()
             gout<<move_to(x,j*this->negyzetmeret)<<box(this->negyzetmeret,this->negyzetmeret);
             gout<<color(0,0,0);
             gout<<move_to(x+2,j*this->negyzetmeret+2)<<box(this->negyzetmeret-3, this->negyzetmeret-3);
+
         }
     }
 }

@@ -27,5 +27,6 @@ class gammadraw : public Widget
         std::string szamlalo;
         int negyzetmeret;
         bool focus = false;
+        bool vege = false;
 };
 #endif // NUMERIC_HPP_INCLUDED

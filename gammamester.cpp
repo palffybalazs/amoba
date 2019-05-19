@@ -92,11 +92,11 @@ bool gammamester::gameover()
                 this->win = true;
                 if(adat[i].kor)
                 {
-                    nyertesszin = "haromszog";
+                    this->nyertesszin = "haromszog jelu jatekos";
                 }
                 else
                 {
-                    nyertesszin = "x";
+                    this->nyertesszin = "x jelu jatekos";
                 }
             }
         }

@@ -16,6 +16,7 @@ class gammamester
         int hanykellnyerni;
         std::vector<koord> mostani_allas();
         std::vector<koord> adat;
+        std::string nyertesszin;
         bool win = false;
         int fugg;
         int viz;
