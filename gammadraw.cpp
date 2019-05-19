@@ -29,6 +29,7 @@ gammadraw::gammadraw(string szin, string szam, gammamester* logika)
     this->szam = szam;
     this->szin = szin;
     this->focus = false;
+    this->negyzetmeret = 30;
     this->x=0;
     this->y=1;
     this->logika = logika;
@@ -42,11 +43,11 @@ void gammadraw::draw()
 
         for(int i=0; i<meret; i++)
         {
-            x = i*30;
+            x = i*this->negyzetmeret;
             gout<<color(255,0,0);
-            gout<<move_to(x,j*30)<<box(30,30);
+            gout<<move_to(x,j*this->negyzetmeret)<<box(this->negyzetmeret,this->negyzetmeret);
             gout<<color(0,0,0);
-            gout<<move_to(x+2,j*30+2)<<box(27,27);
+            gout<<move_to(x+2,j*this->negyzetmeret+2)<<box(27,27);
         }
     }
     vector<koord> mostani_allas = logika->mostani_allas();
@@ -62,10 +63,10 @@ void gammadraw::draw()
             {
                 gout<<color(0,0,255);
             }
-            gout<<move_to(mostani_allas[f].v*30,mostani_allas[f].f*30);
-            gout<<line_to(mostani_allas[f].v*30+30,mostani_allas[f].f*30+30);
-            gout<<move_to(mostani_allas[f].v*30+30,mostani_allas[f].f*30);
-            gout<<line_to(mostani_allas[f].v*30,mostani_allas[f].f*30+30);
+            gout<<move_to(mostani_allas[f].v*this->negyzetmeret,mostani_allas[f].f*this->negyzetmeret);
+            gout<<line_to(mostani_allas[f].v*this->negyzetmeret+this->negyzetmeret,mostani_allas[f].f*this->negyzetmeret+this->negyzetmeret);
+            gout<<move_to(mostani_allas[f].v*this->negyzetmeret+this->negyzetmeret,mostani_allas[f].f*this->negyzetmeret);
+            gout<<line_to(mostani_allas[f].v*this->negyzetmeret,mostani_allas[f].f*this->negyzetmeret+this->negyzetmeret);
 
             //cout<<kor<<endl;
             //cout<<"nem kor";
@@ -81,11 +82,11 @@ void gammadraw::draw()
                 gout<<color(0,255,0);
             }
             cout<<mostani_allas[f].v<<" "<<mostani_allas[f].f<<endl;
-            gout<<move_to(mostani_allas[f].v*30,mostani_allas[f].f*30+30);
-            gout<<line_to(mostani_allas[f].v*30+15,mostani_allas[f].f*30);
-            gout<<line_to(mostani_allas[f].v*30+30,mostani_allas[f].f*30+30);
-            gout<<move_to(mostani_allas[f].v*30,mostani_allas[f].f*30+30);
-            gout<<line_to(mostani_allas[f].v*30+30,mostani_allas[f].f*30+30);
+            gout<<move_to(mostani_allas[f].v*this->negyzetmeret,mostani_allas[f].f*this->negyzetmeret+this->negyzetmeret);
+            gout<<line_to(mostani_allas[f].v*this->negyzetmeret+15,mostani_allas[f].f*this->negyzetmeret);
+            gout<<line_to(mostani_allas[f].v*this->negyzetmeret+this->negyzetmeret,mostani_allas[f].f*this->negyzetmeret+this->negyzetmeret);
+            gout<<move_to(mostani_allas[f].v*this->negyzetmeret,mostani_allas[f].f*this->negyzetmeret+this->negyzetmeret);
+            gout<<line_to(mostani_allas[f].v*this->negyzetmeret+this->negyzetmeret,mostani_allas[f].f*this->negyzetmeret+this->negyzetmeret);
             //cout<<"kor";
             //cout<<kor<<endl;
 
@@ -104,7 +105,10 @@ bool gammadraw::handle(genv::event ev, bool focused)
     {
         for(int l=0; l<=meret; l++)
         {
-            if(ev.pos_x>l*30 && ev.pos_x<l*30+30 && ev.pos_y>k*30 && ev.pos_y<(k+1)*30 && ev.button==btn_left)
+            if(ev.pos_x>l*this->negyzetmeret &&
+               ev.pos_x<l*this->negyzetmeret+this->negyzetmeret &&
+               ev.pos_y>k*this->negyzetmeret && ev.pos_y<(k+1)*this->negyzetmeret &&
+               ev.button==btn_left)
             {
                 once = this->logika->free_to_click(l, k, kor);
                 if(once)
