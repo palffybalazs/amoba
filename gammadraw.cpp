@@ -118,10 +118,6 @@ bool gammadraw::handle(genv::event ev, bool focused)
                     kor = !kor;
                     logika->gameover();
                 }
-                else
-                {
-                    cout<<"ROSSZ HELY";
-                }
             }
         }
     }
