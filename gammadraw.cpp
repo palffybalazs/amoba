@@ -107,7 +107,8 @@ bool gammadraw::handle(genv::event ev, bool focused)
         {
             if(ev.pos_x>l*this->negyzetmeret &&
                ev.pos_x<l*this->negyzetmeret+this->negyzetmeret &&
-               ev.pos_y>k*this->negyzetmeret && ev.pos_y<(k+1)*this->negyzetmeret &&
+               ev.pos_y>k*this->negyzetmeret &&
+               ev.pos_y<(k+1)*this->negyzetmeret &&
                ev.button==btn_left)
             {
                 once = this->logika->free_to_click(l, k, kor);
