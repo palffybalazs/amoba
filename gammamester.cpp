@@ -55,8 +55,29 @@ bool gammamester::free_to_click(int v, int f, bool kor)
     }
     return once;
 }
-bool gammamester::handle(genv::event ev, bool focused)
+bool gammamester::gameover()
 {
+    win = true;
+    for (int i = 0;i<adat.size(); i++)
+    {
 
-return win;
+            stepv = 1;
+            stepv = 0;
+            for (int h = 0; h<adat.size(); h++)
+            {
+                if(!(adat[h].v == adat[i+hossz*stepv].v &&
+                   adat[h].f == adat[i+hossz*stepf].f &&
+                   adat[h].f == adat[i+hossz*stepf].f))
+            }
+    }
+
+    if(win)
+    {
+        cout<<"gyozelem"<<endl;
+    }
+    else
+    {
+        cout<<"mehet tovabb"<<endl;
+    }
+    return win;
 }
