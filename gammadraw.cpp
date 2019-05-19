@@ -115,6 +115,7 @@ bool gammadraw::handle(genv::event ev, bool focused)
                 {
                     loves = true;
                     kor = !kor;
+                    logika->gameover();
                 }
                 else
                 {

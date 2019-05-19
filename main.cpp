@@ -82,7 +82,6 @@ int main()
             bool kappa = true;
             w[2]->draw();
             w[2]->handle(ev,kappa);
-            logika->gameover();
         }
         gout<<refresh;
     }
