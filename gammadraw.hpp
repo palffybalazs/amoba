@@ -2,6 +2,7 @@
 #define GAMMADRAW_HPP_INCLUDED
 #include "widget.hpp"
 #include "graphics.hpp"
+#include "gammamester.hpp"
 #include <vector>
 using namespace genv;
 class gammadraw : public Widget
@@ -9,7 +10,7 @@ class gammadraw : public Widget
 
         public:
         gammadraw();
-        gammadraw(std::string szin, std::string szam);
+        gammadraw(std::string szin, std::string szam, gammamester* logika);
         void draw();
         bool handle(genv::event ev, bool focused);
         std::string returnchosen();

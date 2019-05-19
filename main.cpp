@@ -72,8 +72,9 @@ int main()
             gout<<move_to(280,110)<<text("Mehet");
             if(ev.pos_x>240 && ev.pos_x<360 && ev.pos_y>100 && ev.pos_y<120 && ev.button == btn_left)
             {
+                gammamester* logika = new gammamester(); //game logic started
                 mehet = true;
-                Widget* w3 = new gammadraw(szin,szam);
+                Widget* w3 = new gammadraw(szin,szam, logika);
                 w.push_back(w3);
             }
         }
@@ -82,20 +83,6 @@ int main()
             bool kappa = true;
             w[2]->draw();
             w[2]->handle(ev,kappa);
-            adatok = w[2]->vissza();
-            gamma* v1 = new gammamester(adatok);
-            v.push_back(v1);
-            if(v[0]->handle(ev,kappa))
-            {
-                cout<<"win";
-            }
-
-
-            //for(int i = 0; i<adatok.size();i++)
-            //{
-                //cout<<adatok[i].v<<" "<<adatok[i].f<<endl;
-            //}
-
         }
         gout<<refresh;
     }

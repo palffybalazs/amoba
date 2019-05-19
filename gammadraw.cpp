@@ -24,7 +24,7 @@ gammadraw::gammadraw()
 {
 
 }
-gammadraw::gammadraw(string szin, string szam)
+gammadraw::gammadraw(string szin, string szam, gammamester* logika)
 {
     this->szam = szam;
     this->szin = szin;
