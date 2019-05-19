@@ -114,7 +114,7 @@ bool gammadraw::handle(genv::event ev, bool focused)
                 {
                        if(adat[i].f == k && adat[i].v == l)
                     {
-                        once = false;;
+                        once = false;
                     }
 
                 }
@@ -125,14 +125,7 @@ bool gammadraw::handle(genv::event ev, bool focused)
                 tmp.kor = kor;
                 adat.push_back(tmp);
                 loves = true;
-                 if(kor==true)
-                {
-                    kor = false;
-                }
-                else
-                {
-                    kor = true;
-                }
+                kor = !kor;
                 }
 
 
