@@ -5,7 +5,7 @@
 #include <vector>
 using namespace genv;
 
-class gammamester : public gamma
+class gammamester
 {
     private:
     std::vector<koord>v;
@@ -14,7 +14,7 @@ class gammamester : public gamma
         gammamester();
         gammamester(std::vector<koord>adat);
         bool free_to_click(int v, int f, bool kor);
-        bool handle(genv::event ev, bool focused);
+        bool gameover();
         std::vector<koord> mostani_allas();
         std::vector<koord>adat;
         bool win = false;
