@@ -29,13 +29,13 @@ bool gammamester::free_to_click(int v, int f, bool kor)
 {
     cout<<"gammamester vagyok "<<v<<" "<<f<<endl;
     bool once = true;
-                for(int i = 0;i<this->adat.size(); i++)
-                {
-                    if(this->adat[i].f == f && this->adat[i].v == v)
-                    {
-                        once = false;
-                    }
-                }
+    for(int i = 0; i<this->adat.size(); i++)
+    {
+        if(this->adat[i].f == f && this->adat[i].v == v)
+        {
+            once = false;
+        }
+    }
     if (once)
     {
         koord tmp;
