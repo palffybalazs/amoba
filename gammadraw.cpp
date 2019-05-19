@@ -51,7 +51,7 @@ void gammadraw::negyzetracsrajzolo()
             gout<<color(255,0,0);
             gout<<move_to(x,j*this->negyzetmeret)<<box(this->negyzetmeret,this->negyzetmeret);
             gout<<color(0,0,0);
-            gout<<move_to(x+2,j*this->negyzetmeret+2)<<box(27,27);
+            gout<<move_to(x+2,j*this->negyzetmeret+2)<<box(this->negyzetmeret-3, this->negyzetmeret-3);
         }
     }
 }
