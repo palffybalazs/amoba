@@ -18,15 +18,7 @@ using namespace genv;
 
 gammamester::gammamester()
 {
-
-}
-gammamester::gammamester(vector<koord>adat)
-{
-    this->adat = adat;
-    this->win = win;
-    this->fugg = fugg;
-    this->viz = viz;
-    this->counter = counter;
+    this->hanykellnyerni = 5;
 }
 
 vector<koord> gammamester::mostani_allas()

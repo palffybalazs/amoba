@@ -12,11 +12,11 @@ class gammamester
 
     public:
         gammamester();
-        gammamester(std::vector<koord>adat);
         bool free_to_click(int v, int f, bool kor);
         bool gameover();
+        int hanykellnyerni;
         std::vector<koord> mostani_allas();
-        std::vector<koord>adat;
+        std::vector<koord> adat;
         bool win = false;
         int fugg;
         int viz;
