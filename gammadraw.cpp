@@ -32,7 +32,6 @@ gammadraw::gammadraw(string szin, string szam, gammamester* logika)
     int x=0;
     int y=1;
     this->logika = logika;
-    this-> adat = adat;
     meret = stoi(szam);
 }
 void gammadraw::draw()
@@ -50,9 +49,10 @@ void gammadraw::draw()
         gout<<move_to(x+2,j*30+2)<<box(27,27);
     }
     }
-    for(int f=0;f<adat.size();f++)
+    vector<koord> mostani_allas = logika->mostani_allas();
+    for(int f=0;f<mostani_allas.size();f++)
     {
-        if(loves && adat[f].kor == false)
+        if(loves && mostani_allas[f].kor == false)
     {
         if(szin == "kek")
         {
@@ -62,15 +62,15 @@ void gammadraw::draw()
         {
           gout<<color(0,0,255);
         }
-        gout<<move_to(adat[f].v*30,adat[f].f*30);
-        gout<<line_to(adat[f].v*30+30,adat[f].f*30+30);
-        gout<<move_to(adat[f].v*30+30,adat[f].f*30);
-        gout<<line_to(adat[f].v*30,adat[f].f*30+30);
+        gout<<move_to(mostani_allas[f].v*30,mostani_allas[f].f*30);
+        gout<<line_to(mostani_allas[f].v*30+30,mostani_allas[f].f*30+30);
+        gout<<move_to(mostani_allas[f].v*30+30,mostani_allas[f].f*30);
+        gout<<line_to(mostani_allas[f].v*30,mostani_allas[f].f*30+30);
 
         //cout<<kor<<endl;
         //cout<<"nem kor";
     }
-    if(loves && adat[f].kor == true)
+    if(loves && mostani_allas[f].kor == true)
     {
         if(szin == "kek")
         {
@@ -80,25 +80,22 @@ void gammadraw::draw()
         {
           gout<<color(0,255,0);
         }
-        gout<<move_to(adat[f].v*30,adat[f].f*30+30);
-        gout<<line_to(adat[f].v*30+15,adat[f].f*30);
-        gout<<line_to(adat[f].v*30+30,adat[f].f*30+30);
-        gout<<move_to(adat[f].v*30,adat[f].f*30+30);
-        gout<<line_to(adat[f].v*30+30,adat[f].f*30+30);
+        gout<<move_to(mostani_allas[f].v*30,mostani_allas[f].f*30+30);
+        gout<<line_to(mostani_allas[f].v*30+15,mostani_allas[f].f*30);
+        gout<<line_to(mostani_allas[f].v*30+30,mostani_allas[f].f*30+30);
+        gout<<move_to(mostani_allas[f].v*30,mostani_allas[f].f*30+30);
+        gout<<line_to(mostani_allas[f].v*30+30,mostani_allas[f].f*30+30);
         //cout<<"kor";
         //cout<<kor<<endl;
 
     }
     }
 }
-string gammadraw::returnchosen() // ez a függvény visszaadja az épp kiválasztott számot stringként ha kérik tõle
+string gammadraw::returnchosen()
 {
 
 }
-vector<koord> gammadraw::vissza()
-{
-    return adat;
-}
+
 bool gammadraw::handle(genv::event ev, bool focused)
 {
     once = true;

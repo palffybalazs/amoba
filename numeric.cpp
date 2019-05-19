@@ -60,10 +60,7 @@ string numeric::returnchosen() // ez a függvény visszaadja az épp kiválaszto
 {
     return to_string(this->counter);
 }
-vector<koord> numeric::vissza()
-{
 
-}
 
 bool numeric::handle(genv::event ev, bool focused)
 {

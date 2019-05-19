@@ -22,7 +22,6 @@ public:
     virtual void draw() = 0;
     virtual bool handle(genv::event ev, bool focused) = 0;
     virtual std::string returnchosen() = 0;
-    virtual std::vector<koord> vissza() = 0;
 
    // virtual void handle(genv::event ev) = 0;
 };

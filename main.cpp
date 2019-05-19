@@ -74,7 +74,7 @@ int main()
             {
                 gammamester* logika = new gammamester(); //game logic started
                 mehet = true;
-                Widget* w3 = new gammadraw(szin,szam, logika);
+                Widget* w3 = new gammadraw(szin, szam, logika);
                 w.push_back(w3);
             }
         }

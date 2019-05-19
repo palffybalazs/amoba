@@ -79,10 +79,7 @@ string mylist::returnchosen()
     //cout<<"list: "<<this->start<<" "<<this->chosen<<" "<<options[this->start + this->chosen -1]<<" irtam am"<<endl;
     return this->options[this->start + this->chosen - 1]; //kivalasztom hogy melyiket adjuk vissza
 }
-vector<koord> mylist::vissza()
-{
 
-}
 bool mylist::handle(genv::event ev, bool focused)
 {
     this->focus = focused; //beállítom amit kapok kintrõl

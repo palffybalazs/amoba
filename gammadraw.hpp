@@ -7,7 +7,6 @@
 using namespace genv;
 class gammadraw : public Widget
 {
-
         public:
         gammadraw();
         gammadraw(std::string szin, std::string szam, gammamester* logika);
@@ -15,7 +14,6 @@ class gammadraw : public Widget
         bool handle(genv::event ev, bool focused);
         std::string returnchosen();
         std::vector<koord>adat;
-        std::vector<koord> vissza();
         bool kor = true;
         gammamester* logika;
         int x;
