@@ -12,6 +12,8 @@ class gammadraw : public Widget
         gammadraw(std::string szin, std::string szam, gammamester* logika);
         void draw();
         bool handle(genv::event ev, bool focused);
+        void negyzetracsrajzolo();
+        void lepesrajzolo();
         std::string returnchosen();
         std::vector<koord>adat;
         bool kor = true;
@@ -21,7 +23,7 @@ class gammadraw : public Widget
         std::string szin;
         std::string szam;
         std::string szamlalo;
-       // std::string returnchosen();
+        int negyzetmeret;
         bool focus = false;
 };
 #endif // NUMERIC_HPP_INCLUDED

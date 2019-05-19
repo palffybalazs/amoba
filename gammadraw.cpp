@@ -37,10 +37,14 @@ gammadraw::gammadraw(string szin, string szam, gammamester* logika)
 }
 void gammadraw::draw()
 {
+    this->negyzetracsrajzolo();
+    this->lepesrajzolo();
+}
 
+void gammadraw::negyzetracsrajzolo()
+{
     for(int j=0; j<meret; j++)
     {
-
         for(int i=0; i<meret; i++)
         {
             x = i*this->negyzetmeret;
@@ -50,6 +54,10 @@ void gammadraw::draw()
             gout<<move_to(x+2,j*this->negyzetmeret+2)<<box(27,27);
         }
     }
+}
+
+void gammadraw::lepesrajzolo()
+{
     vector<koord> mostani_allas = logika->mostani_allas();
     for(int f=0; f<mostani_allas.size(); f++)
     {
@@ -67,9 +75,6 @@ void gammadraw::draw()
             gout<<line_to(mostani_allas[f].v*this->negyzetmeret+this->negyzetmeret,mostani_allas[f].f*this->negyzetmeret+this->negyzetmeret);
             gout<<move_to(mostani_allas[f].v*this->negyzetmeret+this->negyzetmeret,mostani_allas[f].f*this->negyzetmeret);
             gout<<line_to(mostani_allas[f].v*this->negyzetmeret,mostani_allas[f].f*this->negyzetmeret+this->negyzetmeret);
-
-            //cout<<kor<<endl;
-            //cout<<"nem kor";
         }
         if(loves && mostani_allas[f].kor == true)
         {
@@ -87,16 +92,12 @@ void gammadraw::draw()
             gout<<line_to(mostani_allas[f].v*this->negyzetmeret+this->negyzetmeret,mostani_allas[f].f*this->negyzetmeret+this->negyzetmeret);
             gout<<move_to(mostani_allas[f].v*this->negyzetmeret,mostani_allas[f].f*this->negyzetmeret+this->negyzetmeret);
             gout<<line_to(mostani_allas[f].v*this->negyzetmeret+this->negyzetmeret,mostani_allas[f].f*this->negyzetmeret+this->negyzetmeret);
-            //cout<<"kor";
-            //cout<<kor<<endl;
-
         }
     }
 }
-string gammadraw::returnchosen()
-{
 
-}
+string gammadraw::returnchosen()
+{}
 
 bool gammadraw::handle(genv::event ev, bool focused)
 {
