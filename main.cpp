@@ -8,7 +8,6 @@
 #include "numeric.hpp"
 #include "gammadraw.hpp"
 #include "gammamester.hpp"
-#include "gamma.hpp"
 #include <iostream>
 #include <fstream>
 using namespace genv;
@@ -23,7 +22,6 @@ int main()
     gout.open(XX,YY);
     event ev;
     vector<Widget*> w;
-    vector<gamma*>v;
     vector<string> options;
     vector<string> numbers;
     vector<koord>adatok;

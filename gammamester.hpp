@@ -1,6 +1,5 @@
 #ifndef GAMMAMESTER_HPP_INCLUDED
 #define GAMMAMESTER_HPP_INCLUDED
-#include "gamma.hpp"
 #include "graphics.hpp"
 #include <vector>
 using namespace genv;

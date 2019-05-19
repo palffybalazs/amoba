@@ -7,7 +7,6 @@
 #include "numeric.hpp"
 #include "gammadraw.hpp"
 #include "gammamester.hpp"
-#include "gamma.hpp"
 #include <vector>
 #include <sstream>
 #include <iostream>
