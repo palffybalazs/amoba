@@ -42,6 +42,8 @@ int main()
     w.push_back(w1);
     w.push_back(w2);
     int fokuszalt_szama = 0;
+    gammamester* logika;
+
     while(gin >> ev)
     {
         //cout<<fokuszalt_szama<<endl;
@@ -72,7 +74,7 @@ int main()
             gout<<move_to(280,110)<<text("Mehet");
             if(ev.pos_x>240 && ev.pos_x<360 && ev.pos_y>100 && ev.pos_y<120 && ev.button == btn_left)
             {
-                gammamester* logika = new gammamester(); //game logic started
+                logika = new gammamester(); //game logic started
                 mehet = true;
                 Widget* w3 = new gammadraw(szin, szam, logika);
                 w.push_back(w3);
@@ -83,6 +85,7 @@ int main()
             bool kappa = true;
             w[2]->draw();
             w[2]->handle(ev,kappa);
+            logika->gameover();
         }
         gout<<refresh;
     }
