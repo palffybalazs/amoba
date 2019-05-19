@@ -86,7 +86,6 @@ void gammadraw::lepesrajzolo()
             {
                 gout<<color(0,255,0);
             }
-            cout<<mostani_allas[f].v<<" "<<mostani_allas[f].f<<endl;
             gout<<move_to(mostani_allas[f].v*this->negyzetmeret,mostani_allas[f].f*this->negyzetmeret+this->negyzetmeret);
             gout<<line_to(mostani_allas[f].v*this->negyzetmeret+15,mostani_allas[f].f*this->negyzetmeret);
             gout<<line_to(mostani_allas[f].v*this->negyzetmeret+this->negyzetmeret,mostani_allas[f].f*this->negyzetmeret+this->negyzetmeret);

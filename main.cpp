@@ -44,7 +44,6 @@ int main()
 
     while(gin >> ev)
     {
-        //cout<<fokuszalt_szama<<endl;
         gout<<color(0,0,0);
         gout<<move_to(0,0)<<box(XX,YY);
         if(mehet == false)
@@ -89,4 +88,3 @@ int main()
     }
     return 0;
 }
-
