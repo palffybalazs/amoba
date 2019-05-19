@@ -29,8 +29,8 @@ gammadraw::gammadraw(string szin, string szam, gammamester* logika)
     this->szam = szam;
     this->szin = szin;
     this->focus = false;
-    int x=0;
-    int y=1;
+    this->x=0;
+    this->y=1;
     this->logika = logika;
     meret = stoi(szam);
 }
@@ -54,7 +54,7 @@ void gammadraw::draw()
     {
         if(loves && mostani_allas[f].kor == false)
         {
-            if(szin == "kek")
+            if(szin == "kek") //ha kekkel vagyunk, ellenfel zold
             {
                 gout<<color(0,255,0);
             }
@@ -80,6 +80,7 @@ void gammadraw::draw()
             {
                 gout<<color(0,255,0);
             }
+            cout<<mostani_allas[f].v<<" "<<mostani_allas[f].f<<endl;
             gout<<move_to(mostani_allas[f].v*30,mostani_allas[f].f*30+30);
             gout<<line_to(mostani_allas[f].v*30+15,mostani_allas[f].f*30);
             gout<<line_to(mostani_allas[f].v*30+30,mostani_allas[f].f*30+30);
@@ -105,10 +106,7 @@ bool gammadraw::handle(genv::event ev, bool focused)
         {
             if(ev.pos_x>l*30 && ev.pos_x<l*30+30 && ev.pos_y>k*30 && ev.pos_y<(k+1)*30 && ev.button==btn_left)
             {
-                koord tmp;
-                v = l*30;
-                f = k*30;
-                once = this->logika->free_to_click(v,f, kor);
+                once = this->logika->free_to_click(l, k, kor);
                 if(once)
                 {
                     loves = true;
@@ -116,7 +114,7 @@ bool gammadraw::handle(genv::event ev, bool focused)
                 }
                 else
                 {
-                    gout<<move_to(0,0)<<text("ROSSZ HELY");
+                    cout<<"ROSSZ HELY";
                 }
             }
         }

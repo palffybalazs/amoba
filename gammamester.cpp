@@ -36,6 +36,7 @@ vector<koord> gammamester::mostani_allas()
 
 bool gammamester::free_to_click(int v, int f, bool kor)
 {
+    cout<<"gammamester vagyok "<<v<<" "<<f<<endl;
     bool once = true;
                 for(int i = 0;i<this->adat.size(); i++)
                 {
