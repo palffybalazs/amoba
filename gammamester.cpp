@@ -29,6 +29,26 @@ gammamester::gammamester(vector<koord>adat)
     this->counter = counter;
 }
 
+bool gammamester::free_to_click(int v, int f, bool kor)
+{
+    bool once = true;
+                for(int i = 0;i<this->adat.size(); i++)
+                {
+                       if(adat[i].f == f && adat[i].v == v)
+                    {
+                        once = false;
+                    }
+                }
+    if (once)
+    {
+        koord tmp;
+        tmp.v = v;
+        tmp.f = f;
+        tmp.kor = kor;
+        this->adat.push_back(tmp);
+    }
+    return once;
+}
 bool gammamester::handle(genv::event ev, bool focused)
 {
 

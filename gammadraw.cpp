@@ -31,6 +31,7 @@ gammadraw::gammadraw(string szin, string szam, gammamester* logika)
     this->focus = false;
     int x=0;
     int y=1;
+    this->logika = logika;
     this-> adat = adat;
     meret = stoi(szam);
 }
@@ -110,28 +111,16 @@ bool gammadraw::handle(genv::event ev, bool focused)
                 koord tmp;
                 v = l*30;
                 f = k*30;
-                for(int i = 0;i<adat.size();i++)
-                {
-                       if(adat[i].f == k && adat[i].v == l)
-                    {
-                        once = false;
-                    }
-
-                }
+                once = this->logika->free_to_click(v,f, kor);
                 if(once)
                 {
-                tmp.v = l;
-                tmp.f = k;
-                tmp.kor = kor;
-                adat.push_back(tmp);
-                loves = true;
-                kor = !kor;
+                    loves = true;
+                    kor = !kor;
                 }
-
-
-                //cout<<kor<<endl;
-
-                //cout<<kor<<endl;
+                else
+                {
+                    gout<<move_to(0,0)<<text("ROSSZ HELY");
+                }
             }
         }
     }

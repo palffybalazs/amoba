@@ -13,6 +13,7 @@ class gammamester : public gamma
     public:
         gammamester();
         gammamester(std::vector<koord>adat);
+        bool free_to_click(int v, int f, bool kor);
         bool handle(genv::event ev, bool focused);
         std::vector<koord>adat;
         bool win = false;

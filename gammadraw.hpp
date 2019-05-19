@@ -17,6 +17,7 @@ class gammadraw : public Widget
         std::vector<koord>adat;
         std::vector<koord> vissza();
         bool kor = true;
+        gammamester* logika;
         int x;
         int y;
         std::string szin;
