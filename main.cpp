@@ -77,7 +77,7 @@ int main()
                 w.push_back(w3);
             }
         }
-        if(mehet == true)
+        else // ha mar megy a jatek
         {
             bool kappa = true;
             w[2]->draw();
